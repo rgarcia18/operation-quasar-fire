@@ -7,20 +7,20 @@ import java.util.List;
 @Service
 public class MessageService {
 
-    public String getSecretMessage(List<List<String>> messages){
+    public String getMessage(List<List<String>> messages){
 
-        String decryptedMessage = "";
+        String msg = "";
 
         for(int i= 0; i < messages.get(0).size(); i++) {
             for(List<String> message : messages) {
                 if(! message.get(i).isEmpty()){
-                    decryptedMessage += message.get(i) + " ";
+                    msg += message.get(i) + " ";
                     break;
                 }
             }
         }
 
-        return decryptedMessage;
+        return msg.trim();
     }
 
     public boolean validMessagesLength(List<List<String>> messages){
